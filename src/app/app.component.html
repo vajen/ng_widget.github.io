@@ -1,0 +1,18 @@
+<h1>Hot Weather Widget</h1>
+<div class="element">
+  <div class="element-left" *ngIf="(hotels$ | async) as hotels; else loadingGif">
+    <app-item [hotels]="hotels" (change)="onCardClick($event)" ></app-item>
+  </div>
+  <div class="element-right" *ngIf="(hotels$ | async) as hotels; else loadingGif">
+    <app-weather [hotel]="currentHotel || hotels[0]"></app-weather>
+    <app-social [hotel]="currentHotel || hotels[0]"></app-social>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="copy-right">
+  <p>© 2015 Hot Weather Widget. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">
+    W3layouts </a></p>
+</div>
+<ng-template #loadingGif>
+  ..... .loading
+</ng-template>
