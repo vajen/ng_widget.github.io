@@ -18,10 +18,4 @@ export class WeatherComponent {
   @Input()
   public activeHotel: IHotels;
 
-  constructor() {}
-
- /* ngOnInit() {
-    this.activeHotel = this.hotel;
-  }*/
-
 }
